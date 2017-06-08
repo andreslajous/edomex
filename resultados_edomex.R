@@ -24,7 +24,7 @@ resultados <- prep_relevante %>%
   group_by(candidato) %>% 
   summarise(votos = sum(votos), total_votos = sum(total_votos)) %>% 
   mutate(porcentaje = votos/total_votos*100) %>% # calcular porcentaje de votos
-  arrange(desc(resultados)) %>% 
+  arrange(desc(porcentaje)) %>% 
   mutate(candidato = factor(candidato, candidato))
 
 ##gráfica con los resultados electorales
