@@ -1,14 +1,14 @@
 ### Resultados del PREP en el Estado de México 2017
 
 Entre ayer y hoy he encontrado varios tuits, mensajes, y videos de gente
-que sostiene que si copia y pega de la página de intenet del PREP a
-Excel los resultados electorales, estos "se ajustan los datos" mostrando
-que hay un "fraude" que le quita la victoria a Delfina Gómez y se la de
-a Alfredo Del Mazo. No sé cuál vaya a ser el resultado de la elección
-una vez que se hagan los computos distritales. Lo que sí se, es que
-copiar y pegar de una página de internet a Excel es una mala idea si uno
-quiere hacer cálculos a partir de datos estadísticos. Javier Aparicio
-muy brevemente ya explicó el problema
+que sostiene que si copia y pega de la página de internet del PREP a
+Excel los resultados electorales, estos "se ajustan" mostrando que hay
+un "fraude" que le quita la victoria a Delfina Gómez y se la de a
+Alfredo Del Mazo. No sé cuál vaya a ser el resultado de la elección una
+vez que se hagan los computos distritales. Lo que sí se, es que copiar y
+pegar de una página de internet a Excel es una mala idea si uno quiere
+hacer cálculos a partir de datos estadísticos. Javier Aparicio muy
+brevemente ya explicó el problema
 <a href = "https://javieraparicio.net/2017/06/06/prep-edomex-2017/">acá</a>.
 
 Aunado a los problemas que señala Aparicio, por muchas razones yo no uso
@@ -20,7 +20,8 @@ deja rastro. Para ilustrar esta ventaja de "R" sobre Excel, pero sobre
 todo para mostrar que no hay nada raro en términos de que aparezcan y
 desaparezcan votos entre la página de internet del PREP y la base de
 datos, pongo aquí el código con el que llegué al mismo resultado final
-que el PREP así como una gráfica para ilustarlos.
+que el PREP en la página de internet así como una gráfica para
+ilustarlos.
 
     suppressPackageStartupMessages(library(readr))
     suppressPackageStartupMessages(library(dplyr))
