@@ -23,10 +23,10 @@ resultados <- prep_relevante %>%
   gather(candidato, votos, jvm:tco) %>% # paso el marco de horizontal a vertical
   group_by(candidato) %>% 
   summarise(votos = sum(votos), total_votos = sum(total_votos)) %>% 
-  mutate(resultados = votos/total_votos*100) %>% # calcular porcentaje de votos
+  mutate(porcentaje = votos/total_votos*100) %>% # calcular porcentaje de votos
   arrange(desc(resultados)) %>% 
   mutate(candidato = factor(candidato, candidato))
 
 ##gráfica con los resultados electorales
-ggplot(resultados, aes(candidato, resultados)) + geom_bar(stat = "identity", fill = "#F8766D") +
+ggplot(resultados, aes(candidato, porcentaje)) + geom_bar(stat = "identity", fill = "#F8766D") +
   ggtitle("Elecciones EdoMex 2017: porcentaje de votación recibido por candidata/o.")

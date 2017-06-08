@@ -1,3 +1,5 @@
+### Resultados del PREP en el Estado de México 2017
+
 Entre ayer y hoy he encontrado varios tuits, mensajes, y videos de gente
 que sostiene que si copia y pega de la página de intenet del PREP a
 Excel los resultados electorales, "se ajustan los datos" mostrando que
@@ -45,8 +47,8 @@ que el PREP así como una gráfica para ilustarlos.
       gather(candidato, votos, jvm:tco) %>% # paso el marco de horizontal a vertical
       group_by(candidato) %>% 
       summarise(votos = sum(votos), total_votos = sum(total_votos)) %>% 
-      mutate(resultados = votos/total_votos*100) %>% # calcular porcentaje de votos
-      arrange(desc(resultados)) %>% 
+      mutate(porcentaje = votos/total_votos*100) %>% # calcular porcentaje de votos
+      arrange(desc(porcentaje)) %>% 
       mutate(candidato = factor(candidato, candidato))
 
     knitr::kable(resultados)
@@ -57,7 +59,7 @@ que el PREP así como una gráfica para ilustarlos.
 <th align="left">candidato</th>
 <th align="right">votos</th>
 <th align="right">total_votos</th>
-<th align="right">resultados</th>
+<th align="right">porcentaje</th>
 </tr>
 </thead>
 <tbody>
@@ -101,7 +103,7 @@ que el PREP así como una gráfica para ilustarlos.
 </table>
 
     ##gráfica con los resultados electorales
-    ggplot(resultados, aes(candidato, resultados)) + geom_bar(stat = "identity", fill = "#F8766D") +
+    ggplot(resultados, aes(candidato, porcentaje)) + geom_bar(stat = "identity", fill = "#F8766D") +
       ggtitle("Elecciones EdoMex 2017: porcentaje de votación recibido por candidata/o.")
 
 ![](resultados_edomex_files/figure-markdown_strict/unnamed-chunk-1-1.png)
